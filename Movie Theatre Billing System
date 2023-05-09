@@ -1,0 +1,62 @@
+
+while True:
+    Name = input("enter your name: ")
+    Total = 0
+    recliner_seats = 20
+    premium_seats = 30
+    executive_seats = 40
+    price_of_recliner = 500
+    price_of_premium = 300
+    price_of_executive = 200
+    combo_price = 300
+   
+    while True:
+        print("""press 1 for recliner_seats
+                 press 2 for premiun seats
+                 press 3 for executive seats""")
+        type_of_seat = int(input("enter the type of seat you want: "))
+        if type_of_seat == 1:
+            seats = int(input("enter no of seats you want: "))
+            if seats > recliner_seats:
+                print("Oopss we have only",recliner_seats,"recliner seats left")
+                break
+            else:
+                Total += seats*price_of_recliner
+                recliner_seats -= seats
+            
+        elif type_of_seat == 2:
+            seats = int(input("enter no of seats you want: "))
+            if seats > premium_seats:
+                print("Oopss we have only",premium_seats,"premium seats left")
+                break
+            else:
+                Total += seats*price_of_premium
+                premium_seats -= seats
+                
+        elif type_of_seat == 3:
+            seats = int(input("enter no of seats you want: "))
+            if seats > executive_seats:
+                print("Oopss we have only",executive_seats,"executive seats left")
+                break
+            else:
+                Total += seats*price_of_executive
+                executive_seats -= seats
+                
+        combo = input("do you want combo of drinks and popcorn Y/N: ")
+        if combo == "yes" or combo == "Y":
+            Total += combo_price
+        
+        repeat = input("do you want to add more seats: ")
+        if repeat == "no" or repeat == "n":
+            break
+    print("-"*40)
+    print("customers name: ",Name)
+    print("total amount: ",Total)
+    print("-"*40)
+    print("recliner seats left: ",recliner_seats)
+    print("premium seats left: ",premium_seats)
+    print("executive seats left: ",executive_seats)
+        
+    repeat1 = input("do you want to go to next person: ")
+    if repeat1 == "no" or repeat1 == "n":
+        break
