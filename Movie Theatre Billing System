@@ -1,15 +1,14 @@
-
+recliner_seats = 20
+premium_seats = 30
+executive_seats = 40
+price_of_recliner = 500
+price_of_premium = 300
+price_of_executive = 200
+combo_price = 300
 while True:
     Name = input("enter your name: ")
     Total = 0
-    recliner_seats = 20
-    premium_seats = 30
-    executive_seats = 40
-    price_of_recliner = 500
-    price_of_premium = 300
-    price_of_executive = 200
-    combo_price = 300
-   
+ 
     while True:
         print("""press 1 for recliner_seats
                  press 2 for premiun seats
