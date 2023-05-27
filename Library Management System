@@ -1,0 +1,72 @@
+books = {"maths":25,"physics":20,"chemistry":30,"english":40,"hindi":35}
+while True:
+    username = input("enter your name: ")
+    if username == "janak":
+        password = input("enter your password: ")
+        if password == "janak123":
+            print("login successful")
+    
+            while True:
+                print("""
+                press 1 to view available books
+                press 2 to add a book
+                press 3 to borrowed a book
+                press 4 to return the book""")
+
+                choice = int(input("enter your choice from 1-5: "))
+                if choice == 1:
+                    print("remaining books: ",books)
+
+                elif choice == 2:
+                    while True:
+                        subject = input("which subject you want to add: ")
+                        books[subject] += 1
+
+                        repeat = input("do you want to add more book y/n : ").lower()
+                        if repeat == "no" or repeat == "n":
+                            break
+                    print("available books: ",books)
+
+                elif choice == 3:
+                    books_borrowed = {}
+                    while True:
+                        subject = input("which subject you want to borrowed: ")
+                        books[subject] -= 1
+                        books_borrowed[subject] = 1
+
+                        repeat = input("do you want to borrow other book y/n : ").lower()
+                        if repeat == "no" or repeat == "n":
+                            break
+                    print("-"*30)
+                    print("username: ",username)
+                    print("books borrowed: ",books_borrowed)
+                    print("-"*30)
+
+                elif choice == 4:
+                    while True:
+                        subject = input("which subject you want to return: ")
+                        books[subject] += 1
+
+                        repeat = input("do you want to return more book y/n: ").lower()
+                        if repeat == "no" or repeat == "n":
+                            break
+                    print("available books: ",books)
+
+                repeat1 = input("do you want to know more details y/n : ").lower()
+                if repeat1 == "no" or repeat1 == "n":
+                    break
+                        
+            print("thank you for coming in library")
+            break
+                
+        else:
+            print("incorrrect password please try again")
+
+    else:
+        print("incorrect username please enter correct username")
+        
+    
+
+        
+        
+        
